@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:net_geo_app/HomeScreen/UpDownAnimationWidget.dart';
+import 'package:net_geo_app/HomeScreen/details_screen.dart';
+import 'package:page_transition/page_transition.dart';
 
 class CityScreen extends StatefulWidget {
   const CityScreen({Key? key, required this.imageUrl}) : super(key: key);
@@ -131,15 +133,28 @@ class _CityScreenState extends State<CityScreen> {
                         itemCount: cityImageList.length,
                         shrinkWrap: true,
                         itemBuilder: (context, index) {
-                          return Container(
-                            margin: const EdgeInsets.symmetric(horizontal: 4),
-                            width: 70,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(5),
-                              image: DecorationImage(
-                                fit: BoxFit.fill,
-                                image: AssetImage(
-                                  cityImageList[index],
+                          return GestureDetector(
+                            onTap: (() {
+                              String image = cityImageList[index];
+                              Navigator.push(
+                                  context,
+                                  PageTransition(
+                                      type: PageTransitionType.fade,
+                                      alignment: Alignment.center,
+                                      child: DetailsScreen(
+                                        imageUrl: image,
+                                      )));
+                            }),
+                            child: Container(
+                              margin: const EdgeInsets.symmetric(horizontal: 4),
+                              width: 70,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(5),
+                                image: DecorationImage(
+                                  fit: BoxFit.fill,
+                                  image: AssetImage(
+                                    cityImageList[index],
+                                  ),
                                 ),
                               ),
                             ),
@@ -158,11 +173,13 @@ class _CityScreenState extends State<CityScreen> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const Text('Food',
-                            style: TextStyle(
-                                fontFamily: 'TT Norms Pro',
-                                fontSize: 16,
-                                fontWeight: FontWeight.w600)),
+                        const Text(
+                          'Food',
+                          style: TextStyle(
+                              fontFamily: 'TT Norms Pro',
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600),
+                        ),
                         Row(
                           children: [
                             Row(

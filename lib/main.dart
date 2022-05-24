@@ -2,7 +2,7 @@ import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:net_geo_app/HomeScreen/home_screen.dart';
-import 'package:net_geo_app/HomeScreen/widgets/home_screen_shimmer.dart';
+
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
