@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
             tag: 'net_geo', child: Image.asset('assets/images/net_geo.png')),
         centered: true,
         splashIconSize: 64,
-        animationDuration: const Duration(seconds: 2),
+        animationDuration: const Duration(seconds: 5),
         splashTransition: SplashTransition.fadeTransition,
       ),
     );

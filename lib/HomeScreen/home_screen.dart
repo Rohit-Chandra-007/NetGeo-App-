@@ -176,6 +176,7 @@ class WorldWidget extends StatelessWidget {
               child: Container(
                 margin: const EdgeInsets.symmetric(horizontal: 20),
                 decoration: BoxDecoration(
+                  gradient: LinearGradient(begin: Alignment.topCenter,end: Alignment.bottomCenter,colors: [Colors.transparent,Colors.black]),
                   borderRadius: BorderRadius.circular(5),
                   image: DecorationImage(
                     fit: BoxFit.fill,
