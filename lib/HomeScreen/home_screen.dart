@@ -176,7 +176,7 @@ class WorldWidget extends StatelessWidget {
               child: Container(
                 margin: const EdgeInsets.symmetric(horizontal: 20),
                 decoration: BoxDecoration(
-                  gradient: LinearGradient(begin: Alignment.topCenter,end: Alignment.bottomCenter,colors: [Colors.transparent,Colors.black]),
+                  gradient: const LinearGradient(begin: Alignment.topCenter,end: Alignment.bottomCenter,colors: [Colors.transparent,Colors.black]),
                   borderRadius: BorderRadius.circular(5),
                   image: DecorationImage(
                     fit: BoxFit.fill,
@@ -209,11 +209,11 @@ class WorldWidget extends StatelessWidget {
                             )
                           ]),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
+                    const Padding(
+                      padding: EdgeInsets.symmetric(
                           horizontal: 20, vertical: 25),
                       child: Column(
-                        children: const [
+                        children: [
                           Align(
                             alignment: Alignment.topLeft,
                             child: Text(

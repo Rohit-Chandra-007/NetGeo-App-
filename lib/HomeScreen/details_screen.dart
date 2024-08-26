@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:net_geo_app/HomeScreen/UpDownAnimationWidget.dart';
 
 class DetailsScreen extends StatefulWidget {
-  DetailsScreen({Key? key, required this.imageUrl}) : super(key: key);
+  const DetailsScreen({Key? key, required this.imageUrl}) : super(key: key);
   final String imageUrl;
 
   @override
@@ -15,7 +15,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
+      body: SizedBox(
         height: MediaQuery.of(context).size.height,
         child: Stack(
           children: [
@@ -34,7 +34,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                   ? Container()
                   : Container(
                       padding: const EdgeInsets.only(bottom: 40, left: 20),
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                           gradient: LinearGradient(
                               begin: Alignment.topCenter,
                               end: Alignment.bottomCenter,
@@ -108,12 +108,12 @@ class _DetailsScreenState extends State<DetailsScreen> {
                                 topRight: Radius.circular(16)),
                             color: Colors.white,
                           ),
-                          padding: EdgeInsets.only(left: 20, right: 20),
+                          padding: const EdgeInsets.only(left: 20, right: 20),
                           height: MediaQuery.of(context).size.height / 1.5,
                           margin: EdgeInsets.only(
                               top: MediaQuery.of(context).size.height - 133),
                           child: ListView(
-                            physics: NeverScrollableScrollPhysics(),
+                            physics: const NeverScrollableScrollPhysics(),
                             children: const [
                               Text(
                                 'Indian Museum of Graphics Design',
