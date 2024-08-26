@@ -58,16 +58,15 @@ class _UpDownAnimationWidgetState extends State<UpDownAnimationWidget>
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        child: Align(
-      alignment: Alignment.bottomCenter,
-      child: Transform.translate(
-        offset: Offset(0, animation.value),
-        child: AnimatedOpacity(
-            duration: Duration(milliseconds: widget.milliSeconds ~/ 2),
-            opacity: opacity,
-            child: widget.child),
-      ),
-    ));
+    return Align(
+          alignment: Alignment.bottomCenter,
+          child: Transform.translate(
+    offset: Offset(0, animation.value),
+    child: AnimatedOpacity(
+        duration: Duration(milliseconds: widget.milliSeconds ~/ 2),
+        opacity: opacity,
+        child: widget.child),
+          ),
+        );
   }
 }
